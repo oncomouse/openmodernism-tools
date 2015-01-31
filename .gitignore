@@ -1,0 +1,6 @@
+page-images/
+*.aux
+*.log
+*.tex
+base.pdf
+!base.tex
