@@ -4,6 +4,7 @@ import string
 import os
 import argparse
 
+
 # Script to convert PDFs w/ scanned page images into LaTeX partials.
 
 #target_file = "Mina Loy - History of Religion of Eros.pdf"
@@ -36,7 +37,11 @@ def process_file( target_file ):
     f.write("\\newgeometry{{margin=0in}}\n\\providecommand{\\oldpagefraction}{\\floatpagefraction}\n\\renewcommand{\\floatpagefraction}{0.1}\n\n")
 
     for page_image in page_images:
-        f.write(base_image_template.format(page_image.replace(".png", "").replace(os.getcwd() + "/","")))
+        page_image = page_image.replace(os.getcwd() + "/","")
+        if not ' ' in page_image:
+            page_image = page_image.replace(".png", "")
+
+        f.write(base_image_template.format(page_image))
 
     # Write the geometry and page fraction restore code:
     f.write("\\restoregeometry\n\\renewcommand{\\floatpagefraction}{\\oldpagefraction}")
