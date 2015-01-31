@@ -1,13 +1,10 @@
+# Script to convert PDFs w/ scanned page images into LaTeX partials.
+
 from subprocess import call
 import glob
 import string
 import os
 import argparse
-
-
-# Script to convert PDFs w/ scanned page images into LaTeX partials.
-
-#target_file = "Mina Loy - History of Religion of Eros.pdf"
 
 def process_file( target_file ):
     
@@ -19,7 +16,7 @@ def process_file( target_file ):
 
     # This requires poppler to work:
     return_status = call(["pdftocairo", "-png", target_file, target_file.replace('.pdf','') + "/page-images/page"])
-    # This version takes forever to run, but it works on a wider range of test files. pdfimages is faster but doesn't always work.
+    # This version can take forever to run, but it works on a wide range of test files and produces quality results.
     
     # This version uses ghostscript and imagemagick but doesn't produce as high-quality results:
     #return_status = call(["convert", '-trim', target_file,  os.getcwd() + "/page-images/page.png"])
