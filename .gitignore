@@ -1,4 +1,4 @@
-page-images/
+**/page-images/
 *.aux
 *.log
 *.tex
