@@ -2,5 +2,6 @@
 *.aux
 *.log
 *.tex
+*.toc
 base.pdf
 !base.tex
