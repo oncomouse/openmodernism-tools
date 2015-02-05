@@ -36,3 +36,8 @@ I've only tried compiling this in `XeTeX`, so YMMV, but as documented in `base.p
 ``` shell
 python pdf-to-latex-partial.py [<FILE>]+
 ```
+
+## Hosting Platform Ideas
+
+* [Ikiwiki](http://ikiwiki.info/) --- Git backend, Markdown support, various account handlers
+	* Custom plugin for firing Pandoc + plugins
